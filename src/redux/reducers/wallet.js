@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  teste: '',
+  total: 0,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {

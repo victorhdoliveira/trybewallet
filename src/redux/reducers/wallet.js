@@ -7,8 +7,8 @@ const INITIAL_STATE = {
   currencies: [],
   expenses: [],
   description: '',
-  methodPayment: '',
-  tag: '',
+  methodPayment: 'Dinheiro',
+  tag: 'Alimentação',
 };
 
 const wallet = (state = INITIAL_STATE, action) => {

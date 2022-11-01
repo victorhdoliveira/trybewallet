@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Login extends React.Component {
+class Login extends Component {
   state = {
     email: '',
     password: '',
     isBtnDisabled: true,
   };
 
-  handleInput = ({ target: { name, value } }) => {
+  handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value }, () => this.buttonVerify());
   };
 
@@ -21,6 +21,7 @@ class Login extends React.Component {
     history.push('/carteira');
   };
 
+  // A função abaixo foi criada na monitoria da Aline
   buttonVerify = () => {
     const { email, password } = this.state;
     const minLength = 6;
@@ -41,14 +42,14 @@ class Login extends React.Component {
             type="text"
             name="email"
             placeholder="Digite seu e-mail"
-            onChange={ this.handleInput }
+            onChange={ this.handleChange }
           />
           <input
             data-testid="password-input"
             type="password"
             name="password"
             placeholder="Senha"
-            onChange={ this.handleInput }
+            onChange={ this.handleChange }
           />
           <button
             type="submit"
@@ -70,6 +71,6 @@ Login.propTypes = {
   }).isRequired,
 };
 
-const mapStateToProps = (state) => state;
+const mapStateToProps = ({ user }) => user;
 
 export default connect(mapStateToProps)(Login);

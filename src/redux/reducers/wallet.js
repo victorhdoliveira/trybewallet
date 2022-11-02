@@ -1,14 +1,10 @@
-import { CURRENCIES_RECEIVE } from '../actions';
+import { ADD_EXPENSES, CURRENCIES_RECEIVE } from '../actions';
 
 const INITIAL_STATE = {
-  total: 0,
-  editor: false, // valor booleano que indica de uma despesa está sendo editada
-  idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
   currencies: [],
   expenses: [],
-  description: '',
-  methodPayment: 'Dinheiro',
-  tag: 'Alimentação',
+  editor: false, // valor booleano que indica de uma despesa está sendo editada
+  idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -17,6 +13,11 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       currencies: action.payload,
+    };
+  case ADD_EXPENSES:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload],
     };
   default:
     return state;

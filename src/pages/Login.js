@@ -21,7 +21,7 @@ class Login extends Component {
     history.push('/carteira');
   };
 
-  // A função abaixo foi criada na monitoria da Aline
+  // A função abaixo foi desenvolvida na monitoria da Aline
   buttonVerify = () => {
     const { email, password } = this.state;
     const minLength = 6;

@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
   sum = (expenses) => {
-    const usedCoins = expenses.map((coin) => coin.currency).pop([]);
     const list = expenses.map((coin) => coin.exchangeRates)[0];
     let total = 0;
-    expenses.forEach((e) => {
-      const convertion = list[usedCoins].ask;
+    expenses.forEach((e, i) => {
+      const usedCoins = expenses.map((coin) => coin.currency);
+      const coinsIndex = usedCoins[i];
+      const convertion = list[coinsIndex].ask;
       total += Number(e.value * convertion);
     });
     return total.toFixed(2);

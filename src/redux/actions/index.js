@@ -1,6 +1,7 @@
 export const LOGIN_INFO = 'LOGIN_INFO';
 export const CURRENCIES_RECEIVE = 'CURRENCIES_RECEIVE';
 export const ADD_EXPENSES = 'ADD_EXPENSES';
+export const RMV_EXPENSES = 'RMV_EXPENSES';
 
 export const loginInfoAction = (payload) => ({
   type: LOGIN_INFO,
@@ -14,6 +15,11 @@ export const currenciesReceive = (payload) => ({
 
 export const exchangeRates = (payload) => ({
   type: ADD_EXPENSES,
+  payload,
+});
+
+export const removeExpenses = (payload) => ({
+  type: RMV_EXPENSES,
   payload,
 });
 

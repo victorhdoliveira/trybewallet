@@ -1,4 +1,7 @@
-import { ADD_EXPENSES, CURRENCIES_RECEIVE, RMV_EXPENSES } from '../actions';
+import {
+  ADD_EXPENSES, CURRENCIES, ENDING_EDIT_EXPENSES,
+  RMV_EXPENSES, STARTING_EDIT_EXPENSES
+} from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -9,7 +12,7 @@ const INITIAL_STATE = {
 
 const wallet = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case CURRENCIES_RECEIVE:
+  case CURRENCIES:
     return {
       ...state,
       currencies: action.payload,
@@ -23,6 +26,18 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: action.payload,
+    };
+  case STARTING_EDIT_EXPENSES:
+    return {
+      ...state,
+      editor: true,
+      idToEdit: action.payload,
+    };
+  case ENDING_EDIT_EXPENSES:
+    return {
+      ...state,
+      editor: false,
+      idToEdit: 0,
     };
   default:
     return state;

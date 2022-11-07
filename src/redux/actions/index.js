@@ -1,7 +1,9 @@
 export const LOGIN_INFO = 'LOGIN_INFO';
-export const CURRENCIES_RECEIVE = 'CURRENCIES_RECEIVE';
+export const CURRENCIES = 'CURRENCIES';
 export const ADD_EXPENSES = 'ADD_EXPENSES';
 export const RMV_EXPENSES = 'RMV_EXPENSES';
+export const STARTING_EDIT_EXPENSES = 'STARTING_EDIT_EXPENSES';
+export const ENDING_EDIT_EXPENSES = 'ENDING_EDIT_EXPENSES';
 
 export const loginInfoAction = (payload) => ({
   type: LOGIN_INFO,
@@ -9,7 +11,7 @@ export const loginInfoAction = (payload) => ({
 });
 
 export const currenciesReceive = (payload) => ({
-  type: CURRENCIES_RECEIVE,
+  type: CURRENCIES,
   payload,
 });
 
@@ -20,6 +22,16 @@ export const exchangeRates = (payload) => ({
 
 export const removeExpenses = (payload) => ({
   type: RMV_EXPENSES,
+  payload,
+});
+
+export const startingEditExpenses = (payload) => ({
+  type: STARTING_EDIT_EXPENSES,
+  payload,
+});
+
+export const endingEditExpenses = (payload) => ({
+  type: ENDING_EDIT_EXPENSES,
   payload,
 });
 

@@ -4,7 +4,7 @@ import React from 'react';
 import Wallet from '../pages/Wallet';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 
-describe('teste da página de Login', () => {
+describe('teste do header da página carteira', () => {
   it('Verifica se há as características do header na página Wallet', () => {
     renderWithRouterAndRedux(<Wallet />);
 

@@ -38,7 +38,7 @@ describe('teste da tabela da página da carteira', () => {
   it('Verifica se é possível excluir uma despesa', async () => {
     renderWithRouterAndRedux(<Wallet />);
 
-    const valueInput = screen.getByTestId('value-input');
+    const valueInput = screen.getByTestId(value);
     userEvent.type(valueInput, '50');
 
     const descriptionInput = screen.getByTestId(description);
@@ -54,7 +54,7 @@ describe('teste da tabela da página da carteira', () => {
     userEvent.click(rmvButton);
     expect(descriptionExpense).not.toBeInTheDocument();
   });
-  it('Verifica se é possível editar uma despesa', async () => {
+  it('Verifica se é possível editar uma despesa e adicionar a Table com as modificações', async () => {
     renderWithRouterAndRedux(<Wallet />);
 
     const valueInput = screen.getByTestId(value);
@@ -63,29 +63,38 @@ describe('teste da tabela da página da carteira', () => {
     const descriptionInput = screen.getByTestId(description);
     userEvent.type(descriptionInput, 'ingresso Rock in Rio');
 
+    const tagInput = screen.getByTestId('tag-input');
+    userEvent.selectOptions(tagInput, screen.getByRole('option', { name: /lazer/i }));
+
     const addButton = screen.getByRole('button', { name: /adicionar/i });
     userEvent.click(addButton);
 
     const ticket = await screen.findByTestId(descriptionTable);
     expect(ticket).toHaveTextContent(/ingresso/i);
 
-    const editButton = screen.getByTestId('edit-btn');
-    userEvent.click(editButton);
+    userEvent.type(valueInput, '300');
+    userEvent.type(descriptionInput, 'Mercado');
+    userEvent.click(addButton);
+
+    const mercado = await screen.findByText(/Mercado/i);
+    expect(mercado).toBeInTheDocument();
+
+    const editButton = screen.getAllByTestId('edit-btn');
+    userEvent.click(editButton[0]);
 
     const descriptionInputEdit = screen.getByTestId(description);
     userEvent.type(descriptionInputEdit, 'imprevisto');
 
-    const tagInput = screen.getByTestId('tag-input');
-    userEvent.selectOptions(tagInput, screen.getByRole('option', { name: /trabalho/i }));
+    const tagInputExpense = screen.getByTestId('tag-input');
+    userEvent.selectOptions(tagInputExpense, screen.getByRole('option', { name: /trabalho/i }));
 
     const editExpense = screen.getByRole('button', { name: 'Editar despesa' });
     expect(editExpense).toBeInTheDocument();
     userEvent.click(editExpense);
 
-    const descriptionExpense = await screen.findByTestId(descriptionTable);
-    const descriptionTag = await screen.findByTestId('tag-table');
+    const imprevisto = await screen.findByText(/imprevisto/);
 
-    expect(descriptionExpense).toHaveTextContent(/imprevisto/i);
-    expect(descriptionTag).toHaveTextContent(/trabalho/i);
+    expect(imprevisto).toBeInTheDocument();
+    expect(mercado).toBeInTheDocument();
   });
 });

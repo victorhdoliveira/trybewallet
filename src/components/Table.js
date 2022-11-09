@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { FaEdit, FaTimes } from 'react-icons/fa';
 import { connect } from 'react-redux';
 import { removeExpenses, startingEditExpenses } from '../redux/actions';
 
@@ -20,9 +21,9 @@ class Table extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <table>
+      <table className="table">
         <thead>
-          <tr>
+          <tr className="table-title">
             <th>Descrição</th>
             <th>Tag</th>
             <th>Método de pagamento</th>
@@ -36,7 +37,7 @@ class Table extends Component {
         </thead>
         <tbody>
           { expenses.map((expense) => (
-            <tr key={ expense.id }>
+            <tr key={ expense.id } className="table-expenses">
               <td data-testid="description-table">{expense.description}</td>
               <td data-testid="tag-table">{expense.tag}</td>
               <td data-testid="method-table">{expense.method}</td>
@@ -59,15 +60,17 @@ class Table extends Component {
                   type="button"
                   data-testid="edit-btn"
                   onClick={ () => this.editExpense(expense.id) }
+                  className="editBtn"
                 >
-                  Editar
+                  <FaEdit />
                 </button>
                 <button
                   type="button"
                   data-testid="delete-btn"
                   onClick={ () => this.deleteExpense(expense.id) }
+                  className="deleteBtn"
                 >
-                  Excluir
+                  <FaTimes />
                 </button>
               </td>
             </tr>

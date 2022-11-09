@@ -38,6 +38,7 @@ describe('teste da página de Login', () => {
     expect(btn).toBeEnabled();
 
     userEvent.click(btn);
+
     expect(history.location.pathname).toBe('/carteira');
   });
 });

@@ -1,13 +1,188 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(220, 220, 220);
+  margin: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.login {
+  background-color: rgb(220, 220, 220);
+  color: black;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: monospace;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color:whitesmoke;
+  border: 5px outset  rgb(67, 126, 19);
+  border-radius: 10px;
+  margin: 200px;
+  width: 300px;
+  height: 400px;
+}
+
+.login-title {
+  color: rgba(50, 148, 94, 0.918);
+  font-size: 23px;
+}
+.login-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: monospace;
+}
+
+.login-logo {
+  width: 150px;
+  height: 90px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  width: 200px;
+  height: 15px;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid rgb(67, 126, 19);
+  background-color:whitesmoke;
+  font-size: small;
+  font-weight: bold;
+  margin: 2px;
+  color: black;
+}
+
+.login-input:focus {
+  background-color: white;
+  outline: none;
+}
+
+.btn-input {
+  border-radius: 5px;
+  background-color:  rgba(155, 150, 150, 0.75);
+  height: 28px; 
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 55px;
+}
+
+.btn-input:enabled {
+  background-color: rgb(67, 126, 19);
+  color: rgba(245, 245, 245, 0.925);
+}
+
+.header-wallet {
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  height: 80px;
+  color: rgba(50, 148, 94, 0.918);
+  font-weight: 700;
+  border: 1px solid rgb(67, 126, 19);
+}
+
+.logoName {
+  display: flex;
+  font-family: monospace;
+  align-items: center;
+  color: rgba(50, 148, 94, 0.918);
+}
+
+.header-logo {
+  width: 50px;
+  height: 45px;
+  align-items: center;
+  padding: 5px;
+}
+
+.count-wallet {
+  margin-left: 10px;
+}
+.email-wallet {
+  margin-right: 10px;
+  display: flex;
+  align-content: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+}
+
+.coinsIcon, .profileIcon {
+  margin-right: 5px;
+}
+
+.form {
+  display: flex;
+  justify-content:space-evenly;
+  margin-top: 30px;
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.formInput {
+  border-radius: 5px;
+  border: 1px solid rgb(67, 126, 19);
+  margin-left: 5px;
+}
+
+.btn-form {
+  border-radius: 5px;
+  border: 1px solid rgb(67, 126, 19);
+}
+
+.btn-form:hover {
+  background-color: rgba(50, 148, 94, 0.918);
+  font-weight: 700;
+  color: white;
+}
+
+.table {
+  border: 1px solid rgb(67, 126, 19);
+  border-radius: 5px;
+  background-color: whitesmoke;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 10%;
+  padding: 20px;
+  width: 1500px;
+}
+
+.table-title {
+  color:  rgba(50, 148, 94, 0.918);
+  font-weight: bolder;
+}
+
+.table-expenses {
+  font-family:'Segoe UI';
+}
+
+.editBtn {
+  background-color: rgba(50, 148, 94, 0.918);
+  font-weight: 500;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.editBtn:hover {
+  opacity: .75;
+}
+
+.deleteBtn {
+  background-color: rgba(209, 22, 22, 0.918);
+  font-weight: 500;
+  border-radius: 5px;
+}
+.deleteBtn:hover {
+  opacity: .75;
 }

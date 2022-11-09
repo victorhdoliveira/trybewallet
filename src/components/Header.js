@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { FaCoins, FaUserCircle } from 'react-icons/fa';
 import { connect } from 'react-redux';
+import logo from '../images/logo-verde.jpeg';
 
 class Header extends Component {
   sum = (expenses) => {
@@ -18,10 +20,26 @@ class Header extends Component {
   render() {
     const { email, expenses } = this.props;
     return (
-      <header data-testid="email-field">
-        <div>{ email }</div>
-        <div data-testid="total-field">{ this.sum(expenses) }</div>
-        <div data-testid="header-currency-field">BRL</div>
+      <header data-testid="email-field" className="header-wallet">
+        <div
+          data-testid="total-field"
+          className="count-wallet"
+        >
+          <FaCoins className="coinsIcon" />
+          { this.sum(expenses) }
+          {' '}
+          BRL
+        </div>
+        {/* <div data-testid="header-currency-field" className="count-wallet">BRL</div> */}
+        <div className="logoName">
+          <img src={ logo } alt="logo" className="header-logo" />
+          <h2>e-Wallet</h2>
+        </div>
+        <div className="email-wallet">
+          {' '}
+          <FaUserCircle className="profileIcon" />
+          { email }
+        </div>
       </header>
     );
   }

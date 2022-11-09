@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import logo from '../images/logo-verde.jpeg';
 
 class Login extends Component {
   state = {
@@ -35,30 +36,39 @@ class Login extends Component {
   render() {
     const { isBtnDisabled } = this.state;
     return (
-      <section>
-        <form className="login-form">
-          <input
-            data-testid="email-input"
-            type="text"
-            name="email"
-            placeholder="Digite seu e-mail"
-            onChange={ this.handleChange }
-          />
-          <input
-            data-testid="password-input"
-            type="password"
-            name="password"
-            placeholder="Senha"
-            onChange={ this.handleChange }
-          />
-          <button
-            type="submit"
-            onClick={ this.handleSubmit }
-            disabled={ isBtnDisabled }
-          >
-            Entrar
-          </button>
-        </form>
+      <section className="login">
+        <div className="login-page">
+          <div className="login-div">
+            <h1 className="login-title">e-Wallet</h1>
+            <img src={ logo } alt="logo" className="login-logo" />
+          </div>
+          <form className="login-form">
+            <input
+              className="login-input"
+              data-testid="email-input"
+              type="text"
+              name="email"
+              placeholder="Digite seu e-mail"
+              onChange={ this.handleChange }
+            />
+            <input
+              className="login-input"
+              data-testid="password-input"
+              type="password"
+              name="password"
+              placeholder="Senha"
+              onChange={ this.handleChange }
+            />
+            <button
+              className="btn-input"
+              type="submit"
+              onClick={ this.handleSubmit }
+              disabled={ isBtnDisabled }
+            >
+              Entrar
+            </button>
+          </form>
+        </div>
       </section>
     );
   }

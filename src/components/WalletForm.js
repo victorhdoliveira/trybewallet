@@ -20,6 +20,20 @@ class WalletForm extends Component {
     dispatch(dispatchCurrencies());
   }
 
+  componentDidUpdate(prev) {
+    const { expenses, idToEdit, editor } = this.props;
+    if (editor === true && prev.editor !== editor) {
+      const formToEdit = expenses.find((expense) => expense.id === idToEdit);
+      this.setState({
+        value: formToEdit.value,
+        description: formToEdit.description,
+        currency: formToEdit.currency,
+        method: formToEdit.method,
+        tag: formToEdit.tag,
+      });
+    }
+  }
+
   initialState = () => {
     this.setState({
       value: '',
@@ -48,6 +62,7 @@ class WalletForm extends Component {
   editExpense = () => {
     const { value, description, currency, method, tag } = this.state;
     const { dispatch, expenses, idToEdit } = this.props;
+
     const toEdit = expenses.map((expense) => {
       if (expense.id === idToEdit) {
         expense.value = value;
@@ -68,7 +83,7 @@ class WalletForm extends Component {
     const { value, description, currency,
       method, tag } = this.state;
     return (
-      <form>
+      <form className="form">
         <label htmlFor="expenses">
           Valor:
           <input
@@ -78,6 +93,7 @@ class WalletForm extends Component {
             id="expenses"
             name="value"
             onChange={ this.handleChange }
+            className="formInput"
           />
         </label>
         <label htmlFor="description">
@@ -89,6 +105,7 @@ class WalletForm extends Component {
             id="description"
             name="description"
             onChange={ this.handleChange }
+            className="formInput"
           />
         </label>
         <label htmlFor="currency">
@@ -98,6 +115,7 @@ class WalletForm extends Component {
             value={ currency }
             name="currency"
             onChange={ this.handleChange }
+            className="formInput"
           >
             { currencies.map((coin, index) => (
               <option key={ index }>{coin}</option>
@@ -111,6 +129,7 @@ class WalletForm extends Component {
             value={ method }
             name="method"
             onChange={ this.handleChange }
+            className="formInput"
           >
             <option value="Dinheiro">Dinheiro</option>
             <option value="Cartão de crédito">Cartão de crédito</option>
@@ -124,6 +143,7 @@ class WalletForm extends Component {
             value={ tag }
             name="tag"
             onChange={ this.handleChange }
+            className="formInput"
           >
             <option value="Alimentação">Alimentação</option>
             <option value="Lazer">Lazer</option>
@@ -133,9 +153,15 @@ class WalletForm extends Component {
           </select>
         </label>
         { editor ? (
-          <button type="button" onClick={ this.editExpense }>Editar despesa</button>)
+          <button
+            type="button"
+            onClick={ this.editExpense }
+            className="btn-form"
+          >
+            Editar despesa
+          </button>)
           : (
-            <button type="button" onClick={ this.addExpense }>
+            <button type="button" onClick={ this.addExpense } className="btn-form">
               Adicionar despesa
             </button>) }
       </form>

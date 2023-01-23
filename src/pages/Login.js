@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from '../images/logo-verde.jpeg';
+import logo from '../images/logoTrybeWallet.png';
 
 class Login extends Component {
   state = {
@@ -39,7 +39,6 @@ class Login extends Component {
       <section className="login">
         <div className="login-page">
           <div className="login-div">
-            <h1 className="login-title">e-Wallet</h1>
             <img src={ logo } alt="logo" className="login-logo" />
           </div>
           <form className="login-form">
@@ -50,6 +49,7 @@ class Login extends Component {
               name="email"
               placeholder="Digite seu e-mail"
               onChange={ this.handleChange }
+              autoComplete="off"
             />
             <input
               className="login-input"
@@ -58,6 +58,7 @@ class Login extends Component {
               name="password"
               placeholder="Senha"
               onChange={ this.handleChange }
+              autoComplete="off"
             />
             <button
               className="btn-input"

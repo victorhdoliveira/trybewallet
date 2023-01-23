@@ -1,10 +1,11 @@
 body {
-  background-color: rgb(220, 220, 220);
+  background-color:whitesmoke;
   margin: 0px;
 }
 
 .login {
-  background-color: rgb(220, 220, 220);
+  background-image: url('https://img.freepik.com/premium-photo/growth-business-finance-chart-white-money-stock-graph-data-3d-background-digital-investment-economy-market-profit-financial-banking-graphic-pattern-currency-trading-price-website-wallpaper_79161-2049.jpg?w=2000');
+  height: 1000px;
   color: black;
   margin: 0;
   display: flex;
@@ -17,8 +18,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color:whitesmoke;
-  border: 5px outset  rgb(67, 126, 19);
+  background-color:rgb(255, 255, 255);
+  border: 5px outset rgba(83, 192, 132, 0.918);
   border-radius: 10px;
   margin: 200px;
   width: 300px;
@@ -37,10 +38,10 @@ body {
 }
 
 .login-logo {
-  width: 150px;
-  height: 90px;
+  width: 260px;
+  height: 60px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 }
 
 .login-form {
@@ -77,12 +78,13 @@ body {
 }
 
 .btn-input:enabled {
-  background-color: rgb(67, 126, 19);
-  color: rgba(245, 245, 245, 0.925);
+  background-color: rgba(83, 192, 132, 0.918);
+  color:black;
+  font-weight: 800;
 }
 
 .header-wallet {
-  background-color: whitesmoke;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content:space-between;
@@ -92,16 +94,9 @@ body {
   border: 1px solid rgb(67, 126, 19);
 }
 
-.logoName {
-  display: flex;
-  font-family: monospace;
-  align-items: center;
-  color: rgba(50, 148, 94, 0.918);
-}
-
 .header-logo {
-  width: 50px;
-  height: 45px;
+  width: 200px;
+  height: 50px;
   align-items: center;
   padding: 5px;
 }
@@ -134,6 +129,7 @@ body {
   border-radius: 5px;
   border: 1px solid rgb(67, 126, 19);
   margin-left: 5px;
+  background-color:white;
 }
 
 .btn-form {
@@ -150,7 +146,7 @@ body {
 .table {
   border: 1px solid rgb(67, 126, 19);
   border-radius: 5px;
-  background-color: whitesmoke;
+  background-color: white;
   text-align: center;
   margin-top: 50px;
   margin-left: 10%;

@@ -94,6 +94,7 @@ class WalletForm extends Component {
             name="value"
             onChange={ this.handleChange }
             className="formInput"
+            autoComplete="off"
           />
         </label>
         <label htmlFor="description">
@@ -106,6 +107,7 @@ class WalletForm extends Component {
             name="description"
             onChange={ this.handleChange }
             className="formInput"
+            autoComplete="off"
           />
         </label>
         <label htmlFor="currency">

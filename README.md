@@ -1,13 +1,30 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<h1 align=center> Projeto TrybeWallet </h1>
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+<p>Deploy:
+  <a href="https://victorhdoliveira.github.io/trybewallet/" target="_blank">
+   TrybeWallet
+  </a>
+</p>
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Data de entrega: 07/11/2022
+
+<h3>Descrição:</h3>
+TrybeWallet é uma carteira virtual de controle de gastor com conversor de moedas.
+O usário é capaz de gerar uma tabela com todos os gastos e categorizar suas despesas podendo adicionar, remover e editar um novo gasto.
+
+
+![gif](https://media.giphy.com/media/n1s1m5WQput8JlZ6CW/giphy.gif)
+
+<h3>Habilidades desenvolvidas:</h3>
+
+<ul>
+   <li>Conectar Redux aos componentes React</li>
+   <li>Criação de store, reducers, actions e dispatchers no Redux em aplicações React</li>
+   <li>riação  actions assíncronas na aplicação React</li>
+</ul>
+
+
+ <a href="https://www.linkedin.com/in/victorhdoliveira/" target ="_blank">
+   <img alt="LinkedIn Logo" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+ </a>
+
